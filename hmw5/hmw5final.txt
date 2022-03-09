@@ -1,0 +1,351 @@
+#include <iostream>
+using namespace std;
+
+void greetings();
+//Description: The greeting() function outputs a greeting to the screen
+//Precondition: None
+//Post-Condition: Output greeting to the screen
+
+int present_menu();
+//Description: The present_menu() function outputs a menu to the screen,
+//gathers input from user, and returns a character reflecting the user's
+//choice, but has no parameters.
+//Precondition: UNKNOWN for now
+//Post-Condition: Outputs menu to the screen, gathers input,
+//and returns a character that reflects the users choice
+
+char get_input_from_user(int val1);
+void error_message();
+string morse(char val1);
+string ascii(char val1);
+void change_case();
+
+bool option_handler(char val1, char, bool);
+//Description: Takes the input that was returned in the
+//present_menu() function and makes decisions from there.
+//Will be able to return true or false depending on whether
+//the user chose to quit the program. It needs to be passed
+//the character (option) that was chosen from the menu,
+//needs to communicate back to its calling function the
+//value of the alphabetic character the user enters for
+//translation (think reference parameter), and it needs
+//to know whether or not a character has indeed been
+//entered for translation
+//Precondtion: A character (I think, double check)
+//Post-Condition: Takes returned value from present_menu
+//and outputs the approiate function or reads if the
+//user wanted to quit the program and does so
+
+//^option_handler() description and postcondition temp
+
+
+void goodbye();
+//Description: The goodbye() function outputs a farewell message to the screen
+//Precondition: None
+//Post-Condition: Output farewell message to the screen
+
+
+int main ()
+{
+    char input = ' ';
+    bool option1_chosen = false;
+
+    greetings();
+    do
+    {
+      option = present_menu();
+      if (option == 1) {
+         option1_chosen = true;
+      }
+      bool quit = option_handler(option, input, option1_chosen);
+      
+    } 
+    while (quit == false);
+    goodbye();
+    return 0;
+}
+
+
+void greetings()
+{
+    cout << "Hello, welcome to my program" << endl << endl;
+    //change later
+}
+
+
+
+int present_menu() //char?
+{
+    int option;
+    cout << "     TRANSLATE" << endl;
+    cout << "     ---------" << endl << endl;
+    cout << "1. Enter a character" << endl;
+    cout << "2. Morse code equivalent" << endl;
+    cout << "3. ASCII value" << endl;
+    cout << "4. Change Case" << endl;
+    cout << "5. Kwit" << endl << endl;
+    cout << "Please enter your option" << endl; //CHANGE LATER FOR CLARITY
+    cin >> option;
+
+    return option;
+}
+
+bool option_handler(char val1, char alpha, bool option1_chosen)
+{
+  bool quit = false;
+  {   
+    switch(option)
+    {
+        case 1:
+          alpha = get_input_from_user(option);
+          option1_chosen = true;
+          break;
+        case 2:
+          if (option1_chosen == true)
+            morse(alpha);
+          else
+            error_message();
+          break;
+        case 3:
+          if (option1_chosen == true)
+            ascii(alpha);
+          else
+            error_message();
+          break;
+        case 4:
+          if (option1_chosen == true)
+            change_case();
+          else
+            error_message();
+          break;
+        case 5:
+          quit = true;
+          break;
+        default:
+          cout << "Invalid Option" << endl;
+          break;
+    }
+  }
+  return quit;
+}
+
+void change_case()
+{
+    char new_letter; //what will be outputted to user
+    
+    
+    
+    return;
+}
+    
+void error_message()
+{
+    cout << "Error: Not a valid character" << endl;
+    return;
+}
+
+
+string ascii(char alpha)
+  {
+      switch(alpha)
+      {
+        case 'a':
+          return "97";
+        case 'b':
+          return "98";
+        case 'c':
+          return "99";
+        case 'd':
+          return "100";
+        case 'e':
+          return "101";
+        case 'f':
+          return "102";
+        case 'g':
+          return "103";
+        case 'h':
+          return "104";
+          case 'i':
+          return "105";
+        case 'j':
+          return "106";
+        case 'k':
+          return "107";
+        case 'l':
+          return "108";
+        case 'm':
+          return "109";
+        case 'n':
+          return "110";
+        case 'o':
+          return "111";
+        case 'p':
+          return "112";
+        case 'q':
+          return "113";
+        case 'r':
+          return "114";
+        case 's':
+          return "115";
+        case 't':
+          return "116";
+        case 'u':
+          return "117";
+        case 'v':
+          return "118";
+        case 'w':
+          return "119";
+        case 'x':
+          return "120";
+        case 'y':
+          return "121";
+        case 'z':
+          return "122";
+      //^for lowercase
+        case 'A': 
+          return "65";
+        case 'B':
+          return "66";
+        case 'C':
+          return "67";
+        case 'D':
+          return "68";
+        case 'E':
+          return "69";
+        case 'F':
+          return "70";
+        case 'G':
+          return "71";
+        case 'H':
+          return "72";
+        case 'I': 
+          return "73";
+        case 'J':
+          return "74";
+        case 'K':
+          return "75";
+        case 'L':
+          return "76";
+        case 'M':
+          return "77";
+        case 'N':
+          return "78";
+        case 'O':
+         return "79";
+        case 'P':
+          return "80";
+        case 'Q':
+          return "81";
+        case 'R':
+          return "82";
+        case 'S':
+          return "83";
+        case 'T':
+          return "84";
+        case 'U':
+          return "85";
+        case 'V':
+          return "86";
+        case 'W':
+          return "87";
+        case 'X':
+          return "88";
+        case 'Y':
+          return "89";
+        case 'Z':
+          return "90";
+      }
+      //^for uppercase
+  }
+
+
+string morse(char alpha) 
+{
+  // Morse Table available online
+  switch (alpha)
+  {
+    case 'a':
+       return ".-";
+    case 'b':
+       return "-...";
+    case 'c':
+       return "-.-.";
+    case 'd':
+       return "-..";
+    case 'e':
+       return ".";
+    case 'f':
+       return "..-.";
+    case 'g':
+       return "--.";
+    case 'h':
+       return "....";
+    case 'i':
+       return "..";
+    case 'j':
+       return ".---";
+    case 'k':
+       return "-.-";
+    case 'l':
+       return ".-..";
+    case 'm':
+       return "--";
+    case 'n':
+       return "-.";
+    case 'o':
+       return "---";
+    case 'p':
+       return ".--.";
+    case 'q':
+       return "--.-";
+    case 'r':
+       return ".-.";
+    case 's':
+       return "...";
+    case 't':
+       return "-";
+    case 'u':
+       return "..-";
+    case 'v':
+       return "...-";
+    case 'w':
+       return ".--";
+    case 'x':
+       return "-..-";
+    case 'y':
+       return "-.--";
+    case 'z':
+       return "--..";
+  }
+  return 0; // possiblibly not needed
+}
+
+char get_input_from_user(int val1)  //needs decription
+{
+    char alpha;
+    bool wrong = false;
+
+    do
+    {
+      if (option == 1)
+      {
+        cout << "What character would you like to use?" << endl;
+        cin >> alpha;
+        ascii(alpha);
+        if (static_cast<int>(alpha == 5))
+          error_message();
+        else
+           wrong = true;
+      }     
+    } while (!wrong);
+    return alpha;
+}
+
+
+
+void goodbye()
+{
+    cout << "Thank you for using my program" << endl;
+    // change later
+    return;
+}

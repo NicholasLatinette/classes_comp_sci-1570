@@ -1,0 +1,297 @@
+#include <iostream>
+using namespace std;
+
+void greetings();
+//Description: The greeting() function outputs a greeting to the screen
+//Precondition: None
+//Post-Condition: Output greeting to the screen
+
+present_menu();
+//Description: The present_menu() function outputs a menu to the screen,
+//gathers input from user, and returns a character reflecting the user's
+//choice, but has no parameters.
+//Precondition: UNKNOWN for now
+//Post-Condition: Outputs menu to the screen, gathers input,
+//and returns a character that reflects the users choice
+
+option_handler();
+//Description: Takes the input that was returned in the
+//present_menu() function and makes decisions from there.
+//Will be able to return true or false depending on whether
+//the user chose to quit the program. It needs to be passed
+//the character (option) that was chosen from the menu,
+//needs to communicate back to its calling function the
+//value of the alphabetic character the user enters for
+//translation (think reference parameter), and it needs
+//to know whether or not a character has indeed been
+//entered for translation
+//Precondtion: A character (I think, double check)
+//Post-Condition: Takes returned value from present_menu
+//and outputs the approiate function or reads if the
+//user wanted to quit the program and does so
+
+//^option_handler() description and postcondition temp
+
+
+void goodbye();
+//Description: The goodbye() function outputs a farewell message to the screen
+//Precondition: None
+//Post-Condition: Output farewell message to the screen
+
+
+int main ()
+{
+    //variables
+    char alpha; // do we need this
+
+
+    greetings()
+    do
+      option = present_menu()
+      quit = option_handler(option, input, entered)
+    while (!quit)
+    goodbyes()
+    return 0;
+}
+
+
+void greetings()
+{
+    cout << "Hello, welcome to my program" << endl;
+    //change later
+}
+
+
+
+present_menu() //char?
+{
+    int option;
+    cout << "TRANSLATE" << endl;
+    cout << "---------" << endl << endl;
+    cout << "1. Enter a character" << endl;
+    cout << "2. Morse code equivalent" << endl;
+    cout << "3. ASCII value" << endl;
+    cout << "4. Change Case" << endl;
+    cout << "5. Kwit" << endl << endl;
+    cout << "Please enter your option << endl; //CHANGE LATER FOR CLARITY
+    cin >> option;
+
+    return option;
+}
+
+bool option_handler(char option, char alpha, bool option1_chosen)
+{
+    switch (option)
+    {
+        case 1:
+          alpha = get_input_from_user()
+          option1_chosen = true;
+        case 2:
+          if (option1_chosen == true)
+            cout << morse(alpha) << endl;
+          else
+            cout << error_message() << endl;
+        case 3:
+          if (option1_chosen == true)
+            cout << ascii(alpha) << endl;
+          else
+            error_message()
+        case 4:
+          if (option1_chosen == true)
+            cout << change_case(alpha) << endl;
+
+int ascii(char alpha)
+  {
+      case 'a':
+        return "
+      case 'b':
+        return "
+      case 'c':
+        return "
+      case 'd':
+        return "
+      case 'e':
+        return "
+      case 'f':
+        return "
+      case 'g':
+        return "
+      case 'h':
+        return "
+      case 'i':
+        return "
+      case 'j':
+        return "
+      case 'k':
+        return "
+      case 'l':
+        return
+      case 'm':
+        return
+      case 'n':
+        return
+      case 'o':
+        return
+      case 'p':
+        return
+      case 'q':
+        return
+      case 'r':
+        return
+      case 's':
+        return
+      case 't':
+        return
+      case 'u':
+        return
+      case 'v':
+        return
+      case 'w':
+        return
+      case 'x':
+        return
+      case 'y':
+        return
+      case 'z':
+        return
+      //^for lowercase
+      case 'A':
+        return
+      case 'B':
+        return
+      case 'C':
+        return
+      case 'D':
+        return
+      case 'E':
+        return
+      case 'F':
+        return
+      case 'G':
+        return
+      case 'H':
+        return
+      case 'I':
+        return
+      case 'J':
+        return
+      case 'K':
+        return
+      case 'L':
+        return
+      case 'M':
+        return
+      case 'N':
+        return
+      case 'O':
+        return
+      case 'P':
+        return
+      case 'Q':
+        return
+      case 'R':
+        return
+      case 'S':
+        return
+      case 'T':
+        return
+      case 'U':
+        return
+      case 'V':
+        return
+      case 'W':
+        return
+      case 'X':
+        return
+      case 'Y':
+        return
+      case 'Z':
+        return
+      //^for uppercase
+  }
+
+
+string morse(char alpha) // make sure that this is ok form *DELETE THIS COMMENT*
+{
+  // Morse Table available online
+  switch (alpha)
+  {
+    case 'a':
+       return ".-";
+    case 'b':
+       return "-...";
+    case 'c':
+       return "-.-.";
+    case 'd':
+       return "-..";
+    case 'e':
+       return ".";
+    case 'f':
+       return "..-.";
+    case 'g':
+       return "--.";
+    case 'h':
+       return "....";
+    case 'i':
+       return "..";
+    case 'j':
+       return ".---";
+    case 'k':
+       return "-.-";
+    case 'l':
+       return ".-..";
+    case 'm':
+       return "--";
+    case 'n':
+       return "-.";
+    case 'o':
+       return "---";
+    case 'p':
+       return ".--.";
+    case 'q':
+       return "--.-";
+    case 'r':
+       return ".-.";
+    case 's':
+       return "...";
+    case 't':
+       return "-";
+    case 'u':
+       return "..-";
+    case 'v':
+       return "...-";
+    case 'w':
+       return ".--";
+    case 'x':
+       return "-..-";
+    case 'y':
+       return "-.--";
+    case 'z':
+       return "--..";
+  }
+}
+
+get_input_from_user()  //needs decription
+{
+    char alpha;
+
+    if (option == 1)
+      cout << "What character would you like to use?"
+      cin >> alpha
+
+    return alpha;
+}
+
+
+bool option_handler(char option, char alpha, bool option1_chosen)
+      quit = false
+      decide on (option)
+        option is 1
+          alpha = get_input_from_user(
+
+
+void goodbye()
+{
+    cout << "Thank you for using my program" << endl;
+    // change later
+}
