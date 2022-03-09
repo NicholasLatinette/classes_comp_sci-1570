@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int D; // Dosage
+  int Age; // Age
+  int IQ; // IQ
+  int freq; // pills per day
+  int Gen; // Gender
+  int DNC; // Constant
+  int TS; // Table Strength
+  int Wt; // Weight of User
+
+  cout << "Hello! Please enter the following information: " << endl;
+  cout << "Age: " << endl;
+  cin >> Age;
+  cout << "Please enter you IQ: " << endl;
+  cin >> IQ;
+  cout << "Please enter the number of pills a day you use: " << endl;
+  cin >> freq;
+  cout << "Thanks, now please enter your Gender, 0 - Female and 1 - Male: " << endl;
+  cin >> Gen;
+  cout << "Almost done, now just enter your weight (in kg): " << endl;
+  cin >> Wt;
+}
